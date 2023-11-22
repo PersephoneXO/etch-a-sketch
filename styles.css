@@ -1,23 +1,34 @@
-/*.display-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: red;
-    height: 700px;
-    width: 700px;
-}*/
-
 body{
     height: 100vh;
     width: 100vw;
     margin: 0;
+    padding: 0;
+    font-family: 'Pacifico', cursive;
 }
 
+body, .display-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.display-body{
+    background-color: red;
+    height: 700px;
+    width: 700px;
+    border-radius: 10px;
+
+
+}
 
 .square{
     display: inline-block;
     border: 1px solid black;
     box-sizing: border-box;
+    background-color: white;
+    margin: 0;
+    padding: 0;
     /*width: calc(500px/var(--gridAmount)-2px);
     height:calc(500px/var(--gridAmount)-2px);*/
 }
@@ -26,10 +37,30 @@ body{
     height: 500px;
     width: 500px;
     font-size:0;
-    margin: auto;
+    margin: 0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    flex-basis: 100%;
-    border: 5px solid black;
+    border: 2px solid black;
+}
+
+.modSquaresB{
+    background-color: black;
+}
+
+
+#title{
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+#new-grid{
+    border-radius: 100%;
+    background-color: white;
+    border-style: none;
+    font-family: 'Pacifico', cursive;
+    height: 100px;
+    width: 100px;
+
 }

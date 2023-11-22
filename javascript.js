@@ -67,5 +67,14 @@ document.addEventListener('DOMContentLoaded',()=>{
 });*/
 
 
+
 let selectedSize=16;
 createGrid(selectedSize);
+
+const modSquares=document.getElementsByClassName('square');
+
+for (let i=0;i<modSquares.length;i++){
+    modSquares[i].addEventListener('mouseover',(event)=>{
+        event.target.classList.add('modSquaresB');
+    });
+}
