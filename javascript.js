@@ -68,8 +68,33 @@ document.addEventListener('DOMContentLoaded',()=>{
 
 
 
+function getSize(){
+    let gridAmount=prompt('Enter a grid size between 16 & 100: ',16);
+    while(Number(gridAmount)>100 || Number(gridAmount)<16){
+        gridAmount=prompt("Invalid input! Please enter a grid size between 16 & 100: ");
+    }
+    gridContainer.innerHTML='';
+    createGrid(gridAmount);
+}
+
+
+
 let selectedSize=16;
 createGrid(selectedSize);
+
+
+const newGridButton=document.querySelector('#new-grid');
+newGridButton.addEventListener('click',(event)=>{
+    getSize();
+    const modSquares=document.getElementsByClassName('square');
+
+for (let i=0;i<modSquares.length;i++){
+    modSquares[i].addEventListener('mouseover',(event)=>{
+        event.target.classList.add('modSquaresB');
+    });
+}
+});
+
 
 const modSquares=document.getElementsByClassName('square');
 

@@ -13,6 +13,8 @@ body, .display-body{
     align-items: center;
 }
 
+
+
 .display-body{
     background-color: red;
     height: 700px;
@@ -55,12 +57,19 @@ body, .display-body{
     color: white;
 }
 
-#new-grid{
+.buttons{
+    margin-top: 10px;
+    display: flex;
+    gap: 450px;
+}
+
+
+
+.button-style{
     border-radius: 100%;
     background-color: white;
-    border-style: none;
+    border:2px solid black;
     font-family: 'Pacifico', cursive;
     height: 100px;
     width: 100px;
-
 }
