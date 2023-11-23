@@ -78,9 +78,31 @@ function getSize(){
 }
 
 
+function randomInteger(max){
+    return Math.floor(Math.random()*(max+1));
+}
+
+function randomRGBColor(){
+    let r=randomInteger(255);
+    let g=randomInteger(255);
+    let b=randomInteger(255);
+    return `rgb(${r},${g},${b})`;
+}
+
+
+
 
 let selectedSize=16;
 createGrid(selectedSize);
+
+const modSquares=document.getElementsByClassName('square');
+
+for (let i=0;i<modSquares.length;i++){
+    modSquares[i].addEventListener('mouseover',(event)=>{
+        event.target.style.backgroundColor='black';
+    });
+}
+
 
 
 const newGridButton=document.querySelector('#new-grid');
@@ -88,18 +110,38 @@ newGridButton.addEventListener('click',(event)=>{
     getSize();
     const modSquares=document.getElementsByClassName('square');
 
-for (let i=0;i<modSquares.length;i++){
-    modSquares[i].addEventListener('mouseover',(event)=>{
-        event.target.classList.add('modSquaresB');
+    for (let i=0;i<modSquares.length;i++){
+        modSquares[i].addEventListener('mouseover',(event)=>{
+        event.target.style.backgroundColor='black';
     });
 }
 });
 
 
-const modSquares=document.getElementsByClassName('square');
 
-for (let i=0;i<modSquares.length;i++){
-    modSquares[i].addEventListener('mouseover',(event)=>{
-        event.target.classList.add('modSquaresB');
-    });
+let flag=true;
+const changeColorButton=document.querySelector('#change-color');
+changeColorButton.addEventListener('click',(event)=>{
+
+
+    const modSquares=document.getElementsByClassName('square');
+    if(flag){
+    for (let i=0;i<modSquares.length;i++){
+        modSquares[i].addEventListener('mouseover',(event)=>{
+            let color=randomRGBColor();
+            event.target.style.backgroundColor=color;
+
+        });
+    }
+
+    }
+    else{
+        for (let i=0;i<modSquares.length;i++){
+            modSquares[i].addEventListener('mouseover',(event)=>{
+            event.target.style.backgroundColor='black';
+        });
+
+    }
 }
+flag=!flag;
+});
